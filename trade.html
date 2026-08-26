@@ -14,10 +14,10 @@
             padding-top: 80px;
             padding-bottom: 60px;
         }
-        .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
 
         .glass-card {
-            background: rgba(26, 30, 65, 0.5);
+            background: rgba(26, 30, 65, 0.6);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255,255,255,0.05);
             border-radius: 24px;
@@ -30,14 +30,14 @@
 
         .swap-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 16px;
         }
         .swap-card {
             background: rgba(26,30,65,0.3);
             border: 1px solid #1E2350;
             border-radius: 16px;
-            padding: 20px;
+            padding: 20px 12px;
             text-align: center;
             transition: 0.3s;
             text-decoration: none;
@@ -47,13 +47,6 @@
         .swap-card .icon { font-size: 28px; display: block; margin-bottom: 6px; }
         .swap-card .name { font-weight: 600; font-size: 15px; }
         .swap-card .desc { font-size: 12px; color: #5A649A; }
-
-        .back-link {
-            display: inline-block; margin-top: 20px; color: #4A8CFF;
-            text-decoration: none; font-weight: 500;
-        }
-        .back-link:hover { text-decoration: underline; }
-
         .pair-badge {
             display: inline-block;
             background: rgba(0,51,153,0.1);
@@ -64,12 +57,42 @@
             margin-top: 6px;
         }
 
-        @media (max-width: 700px) {
+        .contract-box {
+            background: rgba(0,51,153,0.05);
+            border: 1px solid rgba(0,51,153,0.15);
+            border-radius: 12px;
+            padding: 16px;
+            margin: 20px 0;
+            text-align: center;
+            font-size: 13px;
+            color: #8A94C8;
+            font-family: 'Courier New', monospace;
+        }
+        .contract-box .addr { color: #FFD700; }
+        .contract-box .copy-btn {
+            background: transparent; border: none; color: #5A649A;
+            cursor: pointer; font-size: 13px; font-family: 'Segoe UI', sans-serif;
+        }
+        .contract-box .copy-btn:hover { color: #FFD700; }
+        .contract-box .solscan-link {
+            color: #5A649A; text-decoration: none; font-size: 13px;
+            font-family: 'Segoe UI', sans-serif; margin-left: 8px;
+        }
+        .contract-box .solscan-link:hover { color: #fff; }
+
+        .back-link {
+            display: inline-block; margin-top: 20px; color: #4A8CFF;
+            text-decoration: none; font-weight: 500;
+        }
+        .back-link:hover { text-decoration: underline; }
+
+        @media (max-width: 800px) {
             .swap-grid { grid-template-columns: 1fr 1fr; }
             .glass-card { padding: 24px; }
         }
         @media (max-width: 450px) {
             .swap-grid { grid-template-columns: 1fr; }
+            .contract-box { font-size: 11px; }
         }
     </style>
 </head>
@@ -78,7 +101,7 @@
 <div class="container">
     <div class="glass-card">
         <h1>Trade & <span class="highlight">Swap</span> €TWO</h1>
-        <p class="sub">Multiple DEXs and aggregators for the best price</p>
+        <p class="sub">10+ DEXs and aggregators for the best price</p>
 
         <div class="swap-grid">
             <a href="https://jup.ag/swap/SOL-H5kjSzmxW98iZ2Xvx7e45hxxyDjMYTk6z8aJfeFsj46d" target="_blank" class="swap-card">
@@ -117,6 +140,41 @@
                 <span class="desc">Concentrated liquidity</span>
                 <span class="pair-badge">SOL → €TWO</span>
             </a>
+            <a href="https://www.binance.com/en/convert" target="_blank" class="swap-card">
+                <span class="icon">🟡</span>
+                <span class="name">Binance Convert</span>
+                <span class="desc">Fiat → €TWO</span>
+                <span class="pair-badge">EUR → €TWO</span>
+            </a>
+            <a href="https://1inch.io/" target="_blank" class="swap-card">
+                <span class="icon">🔄</span>
+                <span class="name">1inch</span>
+                <span class="desc">Multi-chain aggregator</span>
+                <span class="pair-badge">Any → €TWO</span>
+            </a>
+            <a href="https://www.kraken.com/" target="_blank" class="swap-card">
+                <span class="icon">🐙</span>
+                <span class="name">Kraken</span>
+                <span class="desc">Regulated exchange</span>
+                <span class="pair-badge">EUR → €TWO</span>
+            </a>
+            <a href="https://www.gemini.com/" target="_blank" class="swap-card">
+                <span class="icon">🔮</span>
+                <span class="name">Gemini</span>
+                <span class="desc">Regulated exchange</span>
+                <span class="pair-badge">EUR → €TWO</span>
+            </a>
+            <a href="fintech1.html" class="swap-card" style="border-color: #4A8CFF; grid-column: span 4; background: rgba(0,51,153,0.05);">
+                <span class="icon">💡</span>
+                <span class="name">100+ Fintech Use Cases →</span>
+                <span class="desc">Explore all the ways to use €TWO</span>
+            </a>
+        </div>
+
+        <div class="contract-box">
+            📜 Contract: <span class="addr">H5kjSzmxW98iZ2Xvx7e45hxxyDjMYTk6z8aJfeFsj46d</span>
+            <button onclick="navigator.clipboard.writeText('H5kjSzmxW98iZ2Xvx7e45hxxyDjMYTk6z8aJfeFsj46d')" class="copy-btn">📋 Copy</button>
+            <a href="https://solscan.io/token/H5kjSzmxW98iZ2Xvx7e45hxxyDjMYTk6z8aJfeFsj46d" target="_blank" class="solscan-link">🔍 Solscan</a>
         </div>
 
         <a href="index.html" class="back-link">← Back to €TWO Home</a>
