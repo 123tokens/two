@@ -14,10 +14,10 @@
             padding-top: 80px;
             padding-bottom: 60px;
         }
-        .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
 
         .glass-card {
-            background: rgba(26, 30, 65, 0.5);
+            background: rgba(26, 30, 65, 0.6);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255,255,255,0.05);
             border-radius: 24px;
@@ -30,7 +30,7 @@
 
         .method-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
             gap: 16px;
             margin-bottom: 24px;
         }
@@ -38,7 +38,7 @@
             background: rgba(26,30,65,0.3);
             border: 1px solid #1E2350;
             border-radius: 16px;
-            padding: 20px;
+            padding: 20px 16px;
             text-align: center;
             transition: 0.3s;
             text-decoration: none;
@@ -49,15 +49,42 @@
         .method-card .name { font-weight: 600; }
         .method-card .desc { font-size: 13px; color: #5A649A; }
 
+        .contract-box {
+            background: rgba(0,51,153,0.05);
+            border: 1px solid rgba(0,51,153,0.15);
+            border-radius: 12px;
+            padding: 16px;
+            margin: 20px 0;
+            text-align: center;
+            font-size: 13px;
+            color: #8A94C8;
+            font-family: 'Courier New', monospace;
+        }
+        .contract-box .addr { color: #FFD700; }
+        .contract-box .copy-btn {
+            background: transparent; border: none; color: #5A649A;
+            cursor: pointer; font-size: 13px; font-family: 'Segoe UI', sans-serif;
+        }
+        .contract-box .copy-btn:hover { color: #FFD700; }
+        .contract-box .solscan-link {
+            color: #5A649A; text-decoration: none; font-size: 13px;
+            font-family: 'Segoe UI', sans-serif; margin-left: 8px;
+        }
+        .contract-box .solscan-link:hover { color: #fff; }
+
         .back-link {
             display: inline-block; margin-top: 20px; color: #4A8CFF;
             text-decoration: none; font-weight: 500;
         }
         .back-link:hover { text-decoration: underline; }
 
-        @media (max-width: 600px) {
-            .method-grid { grid-template-columns: 1fr; }
+        @media (max-width: 700px) {
+            .method-grid { grid-template-columns: 1fr 1fr; }
             .glass-card { padding: 24px; }
+        }
+        @media (max-width: 450px) {
+            .method-grid { grid-template-columns: 1fr; }
+            .contract-box { font-size: 11px; }
         }
     </style>
 </head>
@@ -66,34 +93,45 @@
 <div class="container">
     <div class="glass-card">
         <h1>Buy <span class="highlight">€TWO</span></h1>
-        <p class="sub">Choose your preferred way to get €TWO</p>
+        <p class="sub">Choose your preferred payment method</p>
 
         <div class="method-grid">
+            <a href="https://opensea.io/token/solana/H5kjSzmxW98iZ2Xvx7e45hxxyDjMYTk6z8aJfeFsj46d" target="_blank" class="method-card">
+                <span class="icon">💳</span>
+                <span class="name">Card (Visa/MC)</span>
+                <span class="desc">via OpenSea • Instant</span>
+            </a>
             <a href="https://jup.ag/swap/SOL-H5kjSzmxW98iZ2Xvx7e45hxxyDjMYTk6z8aJfeFsj46d" target="_blank" class="method-card">
                 <span class="icon">🔄</span>
                 <span class="name">Jupiter Swap</span>
-                <span class="desc">Best price, any token → €TWO</span>
+                <span class="desc">Any crypto → €TWO</span>
             </a>
             <a href="https://www.geckoterminal.com/solana/pools/YOUR_TWO_USDT_POOL" target="_blank" class="method-card">
                 <span class="icon">🌊</span>
                 <span class="name">Meteora Pool</span>
-                <span class="desc">€TWO/USDT liquidity pool</span>
+                <span class="desc">€TWO/USDT pool</span>
             </a>
-            <a href="https://opensea.io/token/solana/H5kjSzmxW98iZ2Xvx7e45hxxyDjMYTk6z8aJfeFsj46d" target="_blank" class="method-card">
-                <span class="icon">🖼️</span>
-                <span class="name">OpenSea</span>
-                <span class="desc">Buy directly with card or crypto</span>
-            </a>
-            <a href="#" class="method-card" style="border-color: #003399; background: rgba(0,51,153,0.1);">
-                <span class="icon">💳</span>
-                <span class="name">Card (Coming Soon)</span>
-                <span class="desc">Visa/Mastercard — SEPA integration</span>
-            </a>
-            <a href="https://app.uniswap.org/swap?outputCurrency=H5kjSzmxW98iZ2Xvx7e45hxxyDjMYTk6z8aJfeFsj46d" target="_blank" class="method-card" style="grid-column: span 2;">
+            <a href="https://app.uniswap.org/swap?outputCurrency=H5kjSzmxW98iZ2Xvx7e45hxxyDjMYTk6z8aJfeFsj46d" target="_blank" class="method-card">
                 <span class="icon">🦄</span>
-                <span class="name">Uniswap (Ethereum)</span>
-                <span class="desc">Bridge to Ethereum • Wormhole</span>
+                <span class="name">Uniswap</span>
+                <span class="desc">Ethereum • Wormhole</span>
             </a>
+            <a href="https://app.raydium.io/swap/?outputMint=H5kjSzmxW98iZ2Xvx7e45hxxyDjMYTk6z8aJfeFsj46d" target="_blank" class="method-card">
+                <span class="icon">☀️</span>
+                <span class="name">Raydium</span>
+                <span class="desc">Solana DEX</span>
+            </a>
+            <a href="https://orca.so/swap?inputMint=So11111111111111111111111111111111111111112&outputMint=H5kjSzmxW98iZ2Xvx7e45hxxyDjMYTk6z8aJfeFsj46d" target="_blank" class="method-card">
+                <span class="icon">🐋</span>
+                <span class="name">Orca</span>
+                <span class="desc">Concentrated liquidity</span>
+            </a>
+        </div>
+
+        <div class="contract-box">
+            📜 Contract: <span class="addr">H5kjSzmxW98iZ2Xvx7e45hxxyDjMYTk6z8aJfeFsj46d</span>
+            <button onclick="navigator.clipboard.writeText('H5kjSzmxW98iZ2Xvx7e45hxxyDjMYTk6z8aJfeFsj46d')" class="copy-btn">📋 Copy</button>
+            <a href="https://solscan.io/token/H5kjSzmxW98iZ2Xvx7e45hxxyDjMYTk6z8aJfeFsj46d" target="_blank" class="solscan-link">🔍 Solscan</a>
         </div>
 
         <a href="index.html" class="back-link">← Back to €TWO Home</a>
