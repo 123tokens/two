@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>€TWO — Ecosystem</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: #0A0E27;
+            color: #E0E6FF;
+            line-height: 1.6;
+            padding-top: 80px;
+            padding-bottom: 60px;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+
+        .glass-card {
+            background: rgba(26, 30, 65, 0.5);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 24px;
+        }
+        .glass-card h1 { font-size: 32px; margin-bottom: 8px; }
+        .glass-card h1 .highlight { color: #4A8CFF; }
+        .glass-card .sub { color: #8A94C8; margin-bottom: 24px; }
+
+        .token-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin: 20px 0;
+        }
+        .token-card {
+            background: rgba(26,30,65,0.3);
+            border: 1px solid #1E2350;
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+        }
+        .token-card .symbol { font-size: 28px; font-weight: 700; }
+        .token-card .price { font-size: 18px; color: #fff; }
+        .token-card .desc { font-size: 13px; color: #5A649A; }
+        .token-card.one { border-color: rgba(46,204,64,0.3); }
+        .token-card.two { border-color: rgba(0,51,153,0.3); }
+        .token-card.three { border-color: rgba(200,16,46,0.3); }
+
+        .conversion-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 16px;
+            margin: 20px 0;
+        }
+        .conversion-card {
+            background: rgba(26,30,65,0.2);
+            border: 1px solid #1E2350;
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+            font-size: 14px;
+        }
+        .conversion-card .rate { font-size: 20px; font-weight: 700; color: #4A8CFF; }
+
+        .back-link {
+            display: inline-block; margin-top: 20px; color: #4A8CFF;
+            text-decoration: none; font-weight: 500;
+        }
+        .back-link:hover { text-decoration: underline; }
+
+        @media (max-width: 700px) {
+            .token-row { grid-template-columns: 1fr; }
+            .conversion-grid { grid-template-columns: 1fr; }
+            .glass-card { padding: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="glass-card">
+        <h1>One•Two•Three <span class="highlight">Ecosystem</span></h1>
+        <p class="sub">Three tokens, three currencies, three price levels — one wallet</p>
+
+        <div class="token-row">
+            <div class="token-card one">
+                <div class="symbol">$ONE</div>
+                <div class="price">$0.01</div>
+                <div class="desc">Micro-Entry</div>
+                <a href="https://123tokens.github.io/one/" style="color:#2ECC40; font-size:13px;">→ Visit</a>
+            </div>
+            <div class="token-card two">
+                <div class="symbol">€TWO</div>
+                <div class="price">€0.05</div>
+                <div class="desc">Average Order</div>
+                <a href="index.html" style="color:#4A8CFF; font-size:13px;">→ You are here</a>
+            </div>
+            <div class="token-card three">
+                <div class="symbol">£THREE</div>
+                <div class="price">£0.10</div>
+                <div class="desc">Large Payment</div>
+                <a href="https://123tokens.github.io/three/" style="color:#C8102E; font-size:13px;">→ Visit</a>
+            </div>
+        </div>
+
+        <h3 style="margin: 24px 0 12px; color: #4A8CFF;">Conversion Rates (EUR/USD = 1.15)</h3>
+        <div class="conversion-grid">
+            <div class="conversion-card">
+                <span>€TWO → $ONE</span>
+                <div class="rate">1 €TWO = 5.75 $ONE</div>
+            </div>
+            <div class="conversion-card">
+                <span>€TWO → £THREE</span>
+                <div class="rate">1 €TWO = 0.44 £THREE</div>
+            </div>
+            <div class="conversion-card">
+                <span>$ONE → £THREE</span>
+                <div class="rate">1 £THREE = 13.00 $ONE</div>
+            </div>
+        </div>
+
+        <a href="index.html" class="back-link">← Back to €TWO Home</a>
+    </div>
+</div>
+
+</body>
+</html>
